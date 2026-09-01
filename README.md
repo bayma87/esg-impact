@@ -64,13 +64,11 @@ Para utilizar o B Impact Assessment, a empresa deve inicialmente criar uma conta
 
 Após a configuração, o usuário responde a perguntas relacionadas às práticas ambientais, sociais e de governança existentes na empresa. As questões abordam temas como missão, ética, transparência, condições de trabalho, relação com a comunidade, diversidade, gestão ambiental, uso de recursos e impacto sobre clientes. Dependendo do perfil da empresa, a avaliação pode apresentar aproximadamente 50 a 250 perguntas educativas.
 
-> **Figura 1 —** Página inicial do B Impact Assessment, apresentando a ferramenta de autoavaliação de impacto empresarial.  
-> **Fonte:** B Impact Assessment, acesso em 31 ago. 2026.
+
 
 Quando a empresa finaliza ou avança no preenchimento, a plataforma apresenta sua pontuação de impacto e permite comparar o resultado com referências de outras empresas. Além disso, o B Impact Assessment disponibiliza um relatório personalizado de melhoria, que identifica perguntas e áreas nas quais a empresa pode evoluir.
 
-> **Figura 2 —** Etapas de uso do B Impact Assessment: configuração, avaliação, comparação de desempenho e melhoria contínua.  
-> **Fonte:** B Lab UK, acesso em 31 ago. 2026.
+
 
 A plataforma também permite priorizar oportunidades de melhoria e criar uma espécie de roteiro de ação. O usuário pode estabelecer metas, inserir prazo, adicionar comentários e configurar lembretes por e-mail. Dessa maneira, a ferramenta não serve apenas para avaliar a situação atual da empresa, mas também para acompanhar melhorias ao longo do tempo.
 
