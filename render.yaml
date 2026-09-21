@@ -10,7 +10,7 @@ services:
     plan: free
     buildCommand: "python -m pip install --upgrade pip && pip install -r requirements.txt && python manage.py collectstatic --noinput"
     startCommand: "gunicorn setup.wsgi:application"
-    releaseCommand: "python manage.py migrate --noinput"
+    releaseCommand: "python manage.py migrate --noinput && python manage.py shell -c \"from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.filter(username='admin').exists() or User.objects.create_superuser('admin', 'admin@admin.com', 'admin123')\""
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.0"
