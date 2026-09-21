@@ -1,3 +1,8 @@
+databases:
+  - name: esg-impact-db
+    databaseName: esgimpact
+    user: esgimpact
+
 services:
   - type: web
     name: esg-impact
@@ -5,6 +10,7 @@ services:
     plan: free
     buildCommand: "python -m pip install --upgrade pip && pip install -r requirements.txt && python manage.py collectstatic --noinput"
     startCommand: "gunicorn setup.wsgi:application"
+    releaseCommand: "python manage.py migrate --noinput"
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.0"
@@ -14,3 +20,7 @@ services:
         generateValue: true
       - key: DEBUG
         value: "False"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: esg-impact-db
+          property: connectionString
