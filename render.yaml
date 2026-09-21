@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: esg-impact
+    runtime: python
+    plan: free
+    buildCommand: "python -m pip install --upgrade pip && pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn setup.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: DJANGO_SETTINGS_MODULE
+        value: setup.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
