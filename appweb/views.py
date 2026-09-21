@@ -1,6 +1,10 @@
+import logging
+
 from django.shortcuts import render, redirect
 
 from .forms import ContactMessageForm
+
+logger = logging.getLogger(__name__)
 
 
 QUESTIONS = [
@@ -69,7 +73,15 @@ def quem_somos(request):
     if request.method == 'POST':
         form = ContactMessageForm(request.POST)
         if form.is_valid():
-            form.save()
+            try:
+                form.save()
+            except Exception:
+                logger.exception('Erro ao salvar mensagem de contato.')
+                return render(request, 'appweb/quem_somos.html', {
+                    'form': form,
+                    'error_message': 'Não foi possível enviar sua pergunta no momento. Tente novamente em alguns minutos.'
+                })
+
             return render(request, 'appweb/quem_somos.html', {
                 'form': ContactMessageForm(),
                 'success_message': 'Pergunta enviada com sucesso! Nossa equipe responderá em breve.'

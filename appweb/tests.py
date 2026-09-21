@@ -1,6 +1,7 @@
 from django.test import TestCase
+from django.urls import reverse
 
-from appweb.models import AssessmentResult
+from appweb.models import AssessmentResult, ContactMessage
 
 
 class AssessmentResultTests(TestCase):
@@ -19,3 +20,19 @@ class AssessmentResultTests(TestCase):
         self.assertEqual(result.governance_score, 5)
         self.assertEqual(result.overall_score, 19)
         self.assertEqual(result.weakest_pillar, 'Governança')
+
+    def test_quem_somos_post_salva_mensagem(self):
+        response = self.client.post(
+            reverse('quem_somos'),
+            {
+                'name': 'Ana Souza',
+                'email': 'ana@email.com',
+                'message': 'Teste de envio do formulário',
+            },
+            secure=True,
+            follow=True,
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Pergunta enviada com sucesso!')
+        self.assertEqual(ContactMessage.objects.count(), 1)

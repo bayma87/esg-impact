@@ -173,6 +173,15 @@
             border: 1px solid rgba(124, 207, 148, 0.45);
         }
 
+        .error {
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: rgba(255, 120, 120, 0.12);
+            color: #ffd7d7;
+            border: 1px solid rgba(255, 120, 120, 0.38);
+        }
+
         @media (max-width: 900px) {
             .page {
                 grid-template-columns: 1fr;
@@ -227,6 +236,10 @@
 
                 {% if success_message %}
                     <div class="success">{{ success_message }}</div>
+                {% endif %}
+
+                {% if error_message %}
+                    <div class="error">{{ error_message }}</div>
                 {% endif %}
             </section>
         </main>
