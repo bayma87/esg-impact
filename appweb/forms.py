@@ -17,7 +17,7 @@ class ContactMessageForm(forms.ModelForm):
                 'class': 'field-input',
             }),
             'message': forms.Textarea(attrs={
-                'placeholder': 'Escreva sua pergunta ou mensagem...',
+                'placeholder': 'Escreva sua mensagem...',
                 'class': 'field-input field-textarea',
                 'rows': 5,
             }),
